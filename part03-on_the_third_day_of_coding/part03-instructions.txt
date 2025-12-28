@@ -1,0 +1,24 @@
+On The Third Day Of Coding...
+
+On the third day of coding my team lead sent to me... Three security rules,
+
+Two pointers, and a nasty bug in a production tree!
+
+Mr. Frost is quite sad today. The reindeer system got hacked. Apparently, Rudolph had rednose set as his password. Was not hard to break at all! The cybersecurity team developed a new system where each reindeer has to come up with 50 different passwords, out of which the tech team will choose the best one on a set of three rules.
+
+Oh, and by "the tech team" they mean you. Good luck!
+
+Input: list of 50 passwords chosen by reindeer, each on a new line
+Output: A password with the highest security score based on three rules. In case of ties, the earlier password in the file takes precedence.
+
+The three rules:
+
+1. Base password security score is its length.
+2. Every password should have at least: one lowercase letter, one uppercase letter, one digit, one special symbol (!@#$%^&*). If any of these categories are missing, multiply base score by 0.75 for each missing category.
+3. Every password should minimize repeated characters. If at least 30% of password consists of the same character, subtract the number of occurrences of that character from the score (applied only to the most frequent character).
+
+Rules are applied sequentially.
+
+Hint: For special character as specified in the task regex str.matches(".*[!@#$%^&*]+.*") can be used
+or more wider range characters with str.matches(".*[^0-9A-z]+.*") will work too
+
