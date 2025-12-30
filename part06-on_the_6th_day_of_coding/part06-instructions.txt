@@ -1,0 +1,17 @@
+On The Sixth Day Of Coding...
+
+On the sixth day of coding my team lead sent to me... Six handshakes,
+
+Five-pointed star, four dining elves, three security rules, two pointers, and a nasty bug in a production tree!
+
+Mr. Frost bursts into the office looking excited. "I've been analyzing our company's internal social network - you know, who knows who at North Pole Technologies. There's this famous theory called 'six degrees of separation' that says any two sentient beings are connected through at most six steps."
+He pulls up a massive network diagram on his screen. "I want to test this theory on our network. Starting from one being, I need you to find who is the FURTHEST away in terms of connections - the individual at the end of the longest chain of 'friend-of-a-friend' relationships. If multiple beings are equally far, just give me the first one alphabetically."
+
+
+Input format: starting being's name on the first line. All other lines contain bidirectional relationships in a format Name1,Name2.
+Output: The name of the being who is furthest from the starting one (maximum degrees of separation). If multiple entities are at the same maximum distance, output the name of the one that comes first alphabetically.
+Hint: 
+1. You might want to use Breadth-First Search (BFS) to explore the network level by level, tracking the depth of each person.
+2. Parse the file, use recursion for each child node starting from root node.
+
+
