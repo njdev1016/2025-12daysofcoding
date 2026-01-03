@@ -1,0 +1,23 @@
+On the eighth day of coding my team lead sent to me... Eight queens,
+
+Seven Bridges of Königsberg,
+
+Six handshakes, five-pointed star, four dining elves, three security rules, two pointers, and a nasty bug in a production tree!
+
+On the lunch break you notice puzzled Mr. Frost, looking at a chessboard. "Hey, good afternoon! Have not seen you today yet. Happy New Year, by the way! I tried to organize a first chess tournament of 2026 for nutcrackers, and one of those nutjobs came claiming that he has found a new previously unseen valid solution to the Eight Queens Problem - you know, placing 8 queens on a chessboard so none of them can attack each other. This bothers me a lot."
+
+He sets down a file with coordinates. "I need you to verify this. Count how many pairs of queens are attacking each other. A valid solution should have zero conflicts - no two queens on the same row, column, or diagonal. If there are conflicts, I need to know exactly how many pairs are problematic."
+
+
+Input format: 8 lines, each containing a queen's position as row,col (both 0-7, representing positions on an 8×8 chessboard)
+Output: The number of queen pairs that are attacking each other. Output 0 if it's a valid solution (no conflicts).
+
+Rules for queen attacks:
+
+Queens attack along rows (horizontal)
+
+Queens attack along columns (vertical)
+
+Queens attack along diagonals (up-left to down-right and up-right to down-left)
+
+
