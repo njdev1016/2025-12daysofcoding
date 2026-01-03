@@ -213,6 +213,13 @@ toggleAttacks.addEventListener('click', () => {
 function drawAttackLines() {
     clearAttackLines();
 
+    if (conflicts.length === 0) {
+        alert('No conflicts to show! This is a valid solution.');
+        showAttackLines = false;
+        toggleAttacks.textContent = 'Show Attack Lines';
+        return;
+    }
+
     conflicts.forEach(conflict => {
         const cells = document.querySelectorAll('.cell');
         const cell1 = Array.from(cells).find(c =>
@@ -239,7 +246,7 @@ function drawAttackLines() {
             const angle = Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
 
             line.style.width = `${length}px`;
-            line.style.height = '3px';
+            line.style.height = '4px';
             line.style.left = `${x1}px`;
             line.style.top = `${y1}px`;
             line.style.transform = `rotate(${angle}deg)`;
@@ -247,6 +254,8 @@ function drawAttackLines() {
             chessboard.appendChild(line);
         }
     });
+
+    console.log(`Drew ${conflicts.length} attack lines`);
 }
 
 // Clear attack lines
