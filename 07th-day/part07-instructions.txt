@@ -1,0 +1,31 @@
+On the seventh day of coding my team lead sent to me... Seven Bridges of Königsberg,
+
+Six handshakes, five-pointed star, four dining elves, three security rules, two pointers, and a nasty bug in a production tree!
+
+Mr. Frost walks in carrying a historical map. "Have you heard of the Seven Bridges of Königsberg? It's one of the most famous problems in mathematics. The city had seven bridges, and people wondered if you could walk a path crossing each bridge exactly once."
+
+He pulls up a modern map on his screen showing a complex network of land masses connected by 700 bridges. "We have a similar problem here at the North Pole - our transportation network has grown massive. I need to know: can our delivery routes cross each bridge exactly once? And if not, what's the MINIMUM number of times we have to go through a bridge we have already visited to cover all bridges in our network?"
+
+Input format: List of landmasses connected by bridges, one per line in format LandMass1,LandMass2 (remember that bridges are bidirectional)
+Output: The minimum number of additional bridge crossings required (beyond crossing each bridge once). Or 0 if it's possible to cross each bridge exactly once.
+Hint:
+1. You might want to read about Eulerian paths if you are not yet familiar with it.
+2. For a connected undirected graph:
+ - if the number of vertices with an odd degree is 0 or 2, then it is possible to traverse every bridge exactly once → the answer is 0
+ - otherwise, the minimum number of additional bridge crossings required is
+(number of odd-degree vertices / 2) − 1
+It doesn’t matter where the bridges are — what matters is how many odd-degree landmasses there are.
+So use Counter from collections and write a couple code strings.. 
+3. Read up on Eulerian paths; it will help. You don't need to create a graph, but you need to know what is Verticle and Edge.  In graph theory, a vertex has an odd degree if the count of its neighbors is an odd number. 
+Solution:
+- Count the number of landmasses (vertices) that have an odd number of connected bridges
+- if the number of landmasses  with an odd number of bridges  is 0 or 2, then it is possible to traverse every bridge exactly
+  once → the answer is 0
+-  if the number of landmasses  with odd number of bridges  is  > 2 return ( ( number of landmasses  with odd number of bridges / 2 ) − 1 )
+4. Two landmasses can be connected by more than one bridge; count those bridges separately.
+5. 5.1. Read all lines and count how many times each landmass appears => map[landmass]++/ unordered_map[landmass]++ (count both landmasses from each line!)
+   5.2. Count how many landmasses have an odd number of bridges => oddCount++
+   5.3. If 0 or 2 landmasses are odd => you can walk all bridges exactly once => answer is 0
+   5.4. If more than 2 are odd => the minimum number of repeats is: (number of odd landmasses / 2) − 1
+
+

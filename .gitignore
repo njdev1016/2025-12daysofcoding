@@ -1,3 +1,6 @@
 *.class
 *.java
 
+get-path.txt
+.DS_Store
+get-answer.txt
