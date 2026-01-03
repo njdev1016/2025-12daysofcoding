@@ -1,0 +1,34 @@
+31
+
+Final Answer: 31 beats
+
+The longest contiguous rhythm pattern that appears in ALL 10 drummers' sequences is 31 beats long.
+
+The common pattern:
+0,0,0,0,0,1,1,0,1,0,0,0,0,0,1,1,1,1,1,1,0,0,1,1,0,0,0,1,1,0,1
+
+Pattern breakdown:
+- Length: 31 beats
+- Pattern: rest,rest,rest,rest,rest,hit,hit,rest,hit,rest,rest,rest,rest,rest,hit,hit,hit,hit,hit,hit,rest,rest,hit,hit,rest,rest,rest,hit,hit,rest,hit
+
+Positions in each drummer's sequence:
+  Drummer 1: Found at position 17
+  Drummer 2: Found at position 10
+  Drummer 3: Found at position 26
+  Drummer 4: Found at position 27
+  Drummer 5: Found at position 30
+  Drummer 6: Found at position 19
+  Drummer 7: Found at position 11
+  Drummer 8: Found at position 26
+  Drummer 9: Found at position 20
+  Drummer 10: Found at position 13
+
+How the solution works:
+This is a Longest Common Substring problem. The algorithm:
+1. Takes the first drummer's sequence as reference
+2. Tries all possible substring lengths, starting from longest (98 beats) down to 1
+3. For each length, checks all substrings of that length
+4. Verifies if the substring appears in ALL 10 drummers' sequences
+5. Returns the first (longest) match found
+
+All 10 drummers can play this 31-beat rhythm together without relearning their parts!
