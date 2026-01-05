@@ -1,0 +1,7 @@
+It is not necessary that the same worker has to complete the predecessors. For each task you need to keep track of the completed tasks to check the next available tasks, so that  if it had 5th and 2nd tasks, task 7 basically unlocks so u can assign to any available worker at the time. 
+And task 5 is not repeated, if its completed you already can complete task 8 and wait for another worker to finish task 2 so you can do task 7.
+Or if workers finish 5th and 2nd task at first:
+either the workers do task 8 or task 7 or both simultaneously if the workers are available.
+see the 11 workers as slots and answer how many you can fit in at time
+Though you should always give worker the next available task with the highest priority (which u would’ve calculated for each node) provided their dependencies are complete
+
