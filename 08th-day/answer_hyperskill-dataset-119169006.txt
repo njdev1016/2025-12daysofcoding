@@ -1,0 +1,40 @@
+6
+
+Final Answer: 6 attacking pairs
+
+This is an INVALID solution to the Eight Queens Problem with 6 conflicts.
+
+Solution breakdown:
+- 8 queens placed on the board
+- Multiple conflicts found ✗
+
+Board visualization:
+  0 1 2 3 4 5 6 7
+0 . . Q . . . . .
+1 . . . . Q . . .
+2 Q . . . . . . .
+3 . . . . . Q . .
+4 . . . Q . . . .
+5 . Q . . . . . .
+6 . . . . . Q . .
+7 . Q . . . . . .
+
+Queen positions:
+  Queen 1: (3,5) - Row 3, Column 5
+  Queen 2: (2,0) - Row 2, Column 0
+  Queen 3: (7,1) - Row 7, Column 1
+  Queen 4: (5,1) - Row 5, Column 1
+  Queen 5: (6,5) - Row 6, Column 5
+  Queen 6: (1,4) - Row 1, Column 4
+  Queen 7: (4,3) - Row 4, Column 3
+  Queen 8: (0,2) - Row 0, Column 2
+
+Conflicts found:
+1. Queen (3,5) attacks Queen (7,1) - same diagonal
+2. Queen (3,5) attacks Queen (6,5) - same column
+3. Queen (3,5) attacks Queen (0,2) - same diagonal
+4. Queen (2,0) attacks Queen (0,2) - same diagonal
+5. Queen (7,1) attacks Queen (5,1) - same column
+6. Queen (6,5) attacks Queen (4,3) - same diagonal
+
+The solution checks all 28 pairs of queens (combination of 8 choose 2) and found 6 conflicts!

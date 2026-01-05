@@ -1,0 +1,75 @@
+On the eleventh day of coding my team lead sent to me... Eleven baked bakers,
+
+Ten little drummers, nine cat lives, eight queens, seven Bridges of Königsberg,
+
+Six handshakes, five-pointed star, four dining elves, three security rules, two pointers, and a nasty bug in a production tree!
+
+You find Mr. Frost in the office's bakery. "Look what's happening here. Our eleven gingerbread workers need to bake various cookies. But it's not that straightforward. You can't frost cookies before you've baked them, and you can't make sandwich cookies before both halves are ready. So some actions must be done before the others are performed. Surely you understand how complex baking can really get."
+
+He hands you a production schedule. "Here. Each baking action has a duration and a list of which actions must be completed first. Up to eleven gingerbread people can work in parallel on independent baking actions, but an action can only start once ALL its dependencies are done. We need this done by lunch. Can you tell me how much time will it approximately take? We need to hurry up, so don't waste your time calculating it down to a second, an answer using critical path schedule will be good enough. They teach kids outside the North Pole about that, right?"
+
+Input format: One action per line: action_id,duration,dependencies
+
+action_id: Unique identifier (0, 1, 2, ...)
+
+duration: Minutes to complete this action
+
+dependencies: Colon-separated list of actions IDs that must finish first, or none if no dependencies
+
+Example: 5,20,2:3 means action 5 takes 20 minutes and requires actions 2 and 3 to be done first.
+Output: Minimum time in minutes to complete all actions with 11 workers working in parallel.
+
+Important: Don't try to bruteforce this task. Computing true minimum might take surprisingly longer than you think (complexity is exponential).
+
+Also, Mr. Frost will specifically accept only an answer calculated using Critical Path Scheduling (also known as List Scheduling with critical path priority) - which respects both task dependencies AND the 11-worker limit. At each time step, among all tasks whose dependencies are complete, prioritize scheduling those on the critical path first (tasks that would delay the overall completion if delayed).
+
+Hint: 
+1. You might want to read about Directed acyclic graphs first.
+2. Don't forget (like I did) that non critical tasks still have a priority ;)
+3. List scheduling was the most important keyword for me: https://en.wikipedia.org/wiki/List_scheduling
+
+approach 1:
+Here is my approach to this list scheduling problem:
+- encode problem: 
+     - create list of tasks with dependencies
+     - tasks have a critical path of its dependencies' critical path + duration
+     - tasks get an earliest start time corresponding to the max earliest start time of their dependencies (0 if dependency list is empty)
+- initialize:
+     - todo list with all tasks
+     - time with 0
+     - worker list with 11 workers; "blockedUntil" variable = 0
+- while todo list is not empty:
+     - get startable task with highest priority: filter todo list for startable tasks, take the one with max critical path
+     - if no task is startable or no worker is available (blockedUntil > time): time++
+     - get startable task with highest priority (might have changed while waiting):
+         - block 1 worker
+         - set doneTime of task to current time 
+         - remove task from todo list
+- estimate = max doneTime of all tasks
+
+approach 2:
+How the result was obtained (brief but correct)
+ 
+Model: A DAG (Directed Acyclic Graph) of actions with precedence constraints
+ 
+Resources: 11 identical workers operating in parallel
+ 
+Execution rules:
+ 
+Actions are non-preemptive (once started, they run to completion)
+ 
+An action may start only after all its dependencies have finished
+ 
+Time progression:
+ 
+Time advances only by events (task completions), not by unit steps
+ 
+Scheduling algorithm: HLFET (Highest Level First with Estimated Times)
+ 
+Priority = critical path length to the end of the graph
+ 
+Among all ready actions, the one with the maximum critical path (CP) is selected first
+ 
+This approach eliminates FIFO and time++ artifacts and produces the best possible schedule achievable by list scheduling for this task graph
+
+

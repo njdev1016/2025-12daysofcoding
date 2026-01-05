@@ -1,0 +1,14 @@
+On the tenth day of coding my team lead sent to me... Ten little drummers,
+
+Nine cat lives, eight queens, seven Bridges of Königsberg,
+
+Six handshakes, five-pointed star, four dining elves, three security rules, two pointers, and a nasty bug in a production tree!
+
+Mr. Frost walks in carrying sheet music and looking frustrated. "Here you are. We're organizing the winter festival's drumming performance, and there is a huge problem. We have hired ten little drummers, and each one has practiced their own rhythm pattern - sequences of beats and rests. They are not synchronised! Imagine what a tragedy it will be, people are gonna laugh, Mrs. Frost won't be happy. If only they could play at least one little sequence together..."
+
+He spreads out the sheet music. "I need to find the longest contiguous rhythm pattern that appears in ALL ten drummers' sequences. That's the only part they can all play together without relearning their parts. You will help me, right?"
+
+Input format: 10 lines, each containing a comma-separated sequence of beats (1 = hit, 0 = rest).
+Output: The length of the longest contiguous sequence that appears in all 10 drummers' patterns.
+
+

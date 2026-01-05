@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eight Queens Visualization</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Eight Queens Problem Visualizer</h1>
+        <p class="subtitle">Upload a dataset to visualize queen positions and conflicts</p>
+
+        <div class="upload-section">
+            <label for="file-upload" class="file-label">
+                📁 Choose Dataset File
+            </label>
+            <input type="file" id="file-upload" accept=".txt" />
+            <span id="file-name">No file chosen</span>
+        </div>
+
+        <div class="stats-section" id="stats">
+            <div class="stat-card">
+                <div class="stat-value" id="queen-count">0</div>
+                <div class="stat-label">Queens</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="conflict-count">0</div>
+                <div class="stat-label">Conflicts</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="solution-status">-</div>
+                <div class="stat-label">Status</div>
+            </div>
+        </div>
+
+        <div class="board-container">
+            <div class="board" id="chessboard"></div>
+        </div>
+
+        <div class="controls">
+            <button id="toggle-attacks" class="btn">Show Attack Lines</button>
+            <button id="reset" class="btn btn-secondary">Clear Board</button>
+        </div>
+
+        <div class="queen-list" id="queen-list"></div>
+
+        <div class="conflict-list" id="conflict-list"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
